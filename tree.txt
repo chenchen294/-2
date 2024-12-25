@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Tree</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .tree-container {
+            position: relative;
+            display: inline-block;
+            width: 200px;
+            height: 300px;
+            background-color: transparent;
+        }
+        .tree {
+            position: relative;
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 150px solid #228B22; /* Tree color (green) */
+            margin-top: 20px;
+        }
+        .tree:before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: -110px;
+            border-left: 110px solid transparent;
+            border-right: 110px solid transparent;
+            border-bottom: 150px solid #228B22;
+        }
+        .tree:after {
+            content: '';
+            position: absolute;
+            top: -160px;
+            left: -120px;
+            border-left: 120px solid transparent;
+            border-right: 120px solid transparent;
+            border-bottom: 150px solid #228B22;
+        }
+        .trunk {
+            width: 40px;
+            height: 60px;
+            background-color: #8B4513;
+            margin: 0 auto;
+            margin-top: -5px;
+        }
+        .lights {
+            position: absolute;
+            width: 100%;
+            top: 40%;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .light {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            animation: flash 1.5s infinite;
+        }
+        .light:nth-child(1) { background-color: red; animation-delay: 0s; }
+        .light:nth-child(2) { background-color: yellow; animation-delay: 0.5s; }
+        .light:nth-child(3) { background-color: blue; animation-delay: 1s; }
+        .light:nth-child(4) { background-color: white; animation-delay: 1.5s; }
+        .light:nth-child(5) { background-color: pink; animation-delay: 2s; }
+
+        @keyframes flash {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        .star {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 40px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tree-container">
+        <div class="star">⭐</div>
+        <div class="tree"></div>
+        <div class="lights">
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+        </div>
+        <div class="trunk"></div>
+    </div>
+
+    <script>
+        // Optional: Add some sound or music here if you like
+        // You can add background music or sounds for extra atmosphere
+    </script>
+
+</body>
+</html>
